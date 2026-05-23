@@ -4,17 +4,17 @@
   
     
     <entry>
-      <title>Hello</title>
+      <title>多项式全家桶</title>
       <link href="/2026/05/23/Hello/"/>
       <url>/2026/05/23/Hello/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h2 id="多项式乘法"><a href="#多项式乘法" class="headerlink" title="多项式乘法"></a>多项式乘法</h2><p>使用 $FFT$ 或 $NTT$ ，不多赘述，介绍一下 $FFT$ 三次变两次的常数优化。</p><p>我们传统的 $FFT$ 是先进行两次 $FFT$ 转为点值，然后一次 $IDFT$，现在我们对于两个多项式相乘 $A \times B$，我们取 $c_n &#x3D; a_n + b_n i$，其中 $i$ 指虚数，然后计算 $C^2$，取其虚部再除以二即可，这样只用一次 $FFT$。</p><h2 id="多项式乘法逆"><a href="#多项式乘法逆" class="headerlink" title="多项式乘法逆"></a>多项式乘法逆</h2><p>对于多项式 $A(x)$，我们称满足 $A \times B \equiv 1$ 的多项式 $B$ 称为多项式 $A$ 的乘法逆。</p><p>显然当且仅当 $a_0 \ne 0$ 时 $B$ 存在。</p><p>我们考虑求 $B$ 的前 $n$ 项，倍增，显然初始有 $b_0 &#x3D; a_0^{-1}$。</p><p>设已有 $AB’ \equiv 1 \mod(x^n)$，</p><p>则<br>$$<br>(AB’- 1)^2 \equiv 0 \mod(x^{2n}) \<br>A^2B’^2 - 2AB’ + 1 \equiv 0 \mod(x^{2n}) \<br>2AB’ - A^2B’^2 \equiv 1 \mod(x^{2n}) \<br>A (2B’ - AB’^2) \equiv 1 \mod(x^{2n}) \<br>$$<br>那么我们就求出了 $B &#x3D; 2B’ - AB’^2$，有 $AB \equiv 1 \mod(x^{2n})$。</p><p>用主定理算一下，时间复杂度是 $\mathcal{O(n \log n)}$。</p><h2 id="未完待续。。。"><a href="#未完待续。。。" class="headerlink" title="未完待续。。。"></a>未完待续。。。</h2>]]></content>
       
       
       
         <tags>
             
-            <tag> hahaha </tag>
+            <tag> 多项式 </tag>
             
         </tags>
       
